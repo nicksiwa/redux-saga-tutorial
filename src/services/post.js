@@ -13,5 +13,5 @@ export function updatePostApi(data) {
 }
 
 export function deletePostApi(id) {
-  return service().delete('/posts', id).then(res => res.data);
+  return service().delete(`/posts/${id}`, {id: id}).then(res => res.config.id);
 }

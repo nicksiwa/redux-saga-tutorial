@@ -4,7 +4,12 @@ import PostItem from './PostItem';
 
 class PostList extends Component {
   render() {
-    const { posts, match } = this.props;
+    const {
+      posts,
+      match,
+      deletePost
+    } = this.props;
+
     return (
       <Table striped>
         <Table.Header>
@@ -13,11 +18,17 @@ class PostList extends Component {
             <Table.HeaderCell>Title</Table.HeaderCell>
             <Table.HeaderCell>Body</Table.HeaderCell>
             <Table.HeaderCell>Author</Table.HeaderCell>
+            <Table.HeaderCell>Action</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {posts && posts.map(post => (
-            <PostItem key={post.id} post={post} match={match} />
+            <PostItem
+              key={post.id}
+              post={post}
+              match={match}
+              deletePost={deletePost}
+            />
           ))}
         </Table.Body>
       </Table>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPostsPending } from '../../actions/post';
+import { Link } from 'react-router-dom';
+import { fetchPostsPending, deletePostPending } from '../../actions/post';
 import PostList from './PostList';
 import Loading from '../shares/Loading';
 
@@ -10,11 +11,22 @@ class Post extends Component {
   }
 
   render() {
-    const { posts, loading, match } = this.props
+    const {
+      posts,
+      loading,
+      match,
+      deletePost
+    } = this.props
+
     if (loading) return <Loading />
     return (
       <div>
-        <PostList posts={posts} match={match} />
+        <Link to={`${match.url}/create`}>New Post</Link>
+        <PostList
+          posts={posts}
+          match={match}
+          deletePost={deletePost}
+        />
       </div>
     );
   }
@@ -26,7 +38,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchPosts: () => dispatch(fetchPostsPending())
+  fetchPosts: () => dispatch(fetchPostsPending()),
+  deletePost: id => dispatch(deletePostPending(id))
 })
 
 export default connect(

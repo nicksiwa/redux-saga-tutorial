@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { Table } from 'semantic-ui-react';
+import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class PostItem extends Component {
   render() {
-    const { post, match } = this.props;
+    const {
+      post,
+      match,
+      deletePost
+    } = this.props;
+    
     return (
       <Table.Row>
         <Table.Cell>
@@ -14,7 +19,11 @@ class PostItem extends Component {
         </Table.Cell>
         <Table.Cell>{post.title}</Table.Cell>
         <Table.Cell>{post.body}</Table.Cell>
-        <Table.Cell>{post.userId}</Table.Cell>
+        <Table.Cell>{post.author}</Table.Cell>
+        <Table.Cell>
+          <Button>Edit</Button>
+          <Button onClick={() => deletePost(post.id)}>Delete</Button>
+        </Table.Cell>
       </Table.Row>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import MainPage from '../components/MainPage';
+import MainPage from '../components/mains/MainPage';
 import PostRoute from './post';
 
 class MainRoute extends Component {

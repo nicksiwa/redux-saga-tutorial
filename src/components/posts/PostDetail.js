@@ -15,7 +15,7 @@ class PostDetail extends Component {
             <Item.Description>
               {post && post.body}
             </Item.Description>
-            <Item.Extra>{post && post.userId}</Item.Extra>
+            <Item.Extra>{post && post.author}</Item.Extra>
           </Item.Content>
         </Item>
       </Item.Group>
