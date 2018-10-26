@@ -9,7 +9,7 @@ export function createPostApi(data) {
 }
 
 export function updatePostApi(data) {
-  return service().put('/posts', data).then(res => res.data);
+  return service().put(`/posts/${data.id}`, data).then(res => res.data);
 }
 
 export function deletePostApi(id) {

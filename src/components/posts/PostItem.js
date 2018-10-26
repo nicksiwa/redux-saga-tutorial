@@ -7,7 +7,8 @@ class PostItem extends Component {
     const {
       post,
       match,
-      deletePost
+      deletePost,
+      editPost
     } = this.props;
     
     return (
@@ -21,7 +22,7 @@ class PostItem extends Component {
         <Table.Cell>{post.body}</Table.Cell>
         <Table.Cell>{post.author}</Table.Cell>
         <Table.Cell>
-          <Button>Edit</Button>
+          <Button onClick={() => editPost(post.id)}>Edit</Button>
           <Button onClick={() => deletePost(post.id)}>Delete</Button>
         </Table.Cell>
       </Table.Row>

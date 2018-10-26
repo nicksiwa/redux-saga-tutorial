@@ -5,7 +5,7 @@ import { POST } from '../../constants/actionTypes';
 import confirmSaga from '../confirmSaga';
 
 function* deletePost(action) {
-  const message = `Are you sure you want to delete post No.${action.payload} ?`;
+  const message = `Are you sure you want to delete post id : ${action.payload} ?`;
   const dialog = yield call(confirmSaga, message);
 
   if(dialog.confirm) {

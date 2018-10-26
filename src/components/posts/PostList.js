@@ -7,7 +7,8 @@ class PostList extends Component {
     const {
       posts,
       match,
-      deletePost
+      deletePost,
+      editPost
     } = this.props;
 
     return (
@@ -28,6 +29,7 @@ class PostList extends Component {
               post={post}
               match={match}
               deletePost={deletePost}
+              editPost={editPost}
             />
           ))}
         </Table.Body>

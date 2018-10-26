@@ -61,3 +61,31 @@ export function deletePostFailure(err) {
     message: err
   }
 }
+
+export function updatePostPending(id) {
+  return {
+    type: POST.UPDATE_POST_PENDING,
+    payload: id
+  }
+}
+
+export function updatePostSuccess(post) {
+  return {
+    type: POST.UPDATE_POST_SUCCESS,
+    payload: post
+  }
+}
+
+export function updatePostFailure(err) {
+  return {
+    type: POST.UPDATE_POST_FAILURE,
+    message: err
+  }
+}
+
+export function updatePostSubmitting(post) {
+  return {
+    type: POST.UPDATE_POST_SUBMITTING,
+    payload: post
+  }
+}

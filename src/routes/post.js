@@ -11,6 +11,7 @@ class PostRoute extends Component {
       <Switch>
         <Route exact path={match.path} component={Post} />
         <Route path={`${match.path}/create`} component={PostForm} />
+        <Route path={`${match.path}/edit/:postId`} component={PostForm} />
         <Route path={`${match.path}/:postId`} component={PostDetail} />
       </Switch>
     );
